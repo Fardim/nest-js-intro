@@ -89,3 +89,7 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 $ npm install -g @nestjs/cli
 
 $ nest new 1-nest-js-intro
+
+$ npm install class-validator
+
+$ npm i class-transformer

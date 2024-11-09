@@ -1,10 +1,23 @@
 import { Injectable } from '@nestjs/common';
+import { CreateUserDto } from './dtos/create-user.dto';
 
 @Injectable()
 export class UsersService {
-  users: IUser[] = [
-    { id: 1, name: 'john', age: 28, gender: 'male', isMarried: false },
-    { id: 2, name: 'mark', age: 32, gender: 'male', isMarried: true },
+  users: CreateUserDto[] = [
+    {
+      id: 1,
+      name: 'john',
+      email: 'john@gmail.com',
+      gender: 'male',
+      isMarried: false,
+    },
+    {
+      id: 2,
+      name: 'mark',
+      email: 'mark@gmail.com',
+      gender: 'male',
+      isMarried: true,
+    },
   ];
 
   getAllUsers() {
@@ -15,15 +28,8 @@ export class UsersService {
     return this.users.find((d) => d.id === id);
   }
 
-  createUser(user: IUser) {
+  createUser(user: CreateUserDto) {
     this.users.push(user);
   }
 }
 
-export interface IUser {
-  id: number;
-  name: string;
-  age: number;
-  gender: string;
-  isMarried: boolean;
-}
