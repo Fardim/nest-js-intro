@@ -86,6 +86,6 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
 ## Commands used in the project
 
-## npm install -g @nestjs/cli
+$ npm install -g @nestjs/cli
 
-## nest new 1-nest-js-intro
+$ nest new 1-nest-js-intro
