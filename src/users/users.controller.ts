@@ -36,6 +36,7 @@ export class UsersController {
   @Post('createUser')
   // createUser(@Body(new ValidationPipe()) user: CreateUserDto) {
   createUser(@Body() user: CreateUserDto) { // ValidationPipe is handled globally in main.ts file
+    console.log(user instanceof CreateUserDto);
     this.userService.createUser(user);
     return 'A new user is created';
   }
