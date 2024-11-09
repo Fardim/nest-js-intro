@@ -1,5 +1,6 @@
 import {
   Controller,
+  DefaultValuePipe,
   Get,
   Param,
   ParseIntPipe,
@@ -15,8 +16,8 @@ export class UsersController {
   @Get()
   // getUsers(@Query() query: any) { query.gender query.isMarried
   getUsers(
-    @Query('limit', ParseIntPipe) limit: number,
-    @Query('page', ParseIntPipe) page: number,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
   ) {
     console.log(limit, page); // Male directly
     return this.userService.getAllUsers();
